@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "Cite this version of the research release."
+title: "Unequal splits can shrink cross-fit Gaussian confidence sets"
+authors:
+  - name: "DannyExperiments"
+type: software
+version: "1.0.0"
+date-released: 2026-11-27
+repository-code: "https://github.com/DannyExperiments/cross-fit-gaussian-unequal-splits"
+keywords:
+  - "universal inference"
+  - "cross-fit likelihood ratio"
+  - "Gaussian confidence sets"
+  - "sample splitting"
+  - "expected squared diameter"
+  - "high-confidence asymptotics"
+doi: "10.5281/zenodo.24571972"
+url: "https://doi.org/10.5281/zenodo.24571972"
+preferred-citation:
+  type: software
+  title: "Unequal splits can shrink cross-fit Gaussian confidence sets"
+  authors:
+    - name: "DannyExperiments"
+  version: "1.0.0"
+  date-released: 2026-11-27
+  doi: "10.5281/zenodo.24571972"
+  url: "https://doi.org/10.5281/zenodo.24571972"
+  repository-code: "https://github.com/DannyExperiments/cross-fit-gaussian-unequal-splits"

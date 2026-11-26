@@ -1,0 +1,5 @@
+150 exact fold likelihood identities
+Exact expectation certificate: d=1 unequal < 104 and balanced >= 120
+Exact expectation certificate: d=2 unequal < 328/3 and balanced = 150
+400 exact balanced exponent factorizations
+61 exact slope comparisons and a rational bracket on the unequal intercept

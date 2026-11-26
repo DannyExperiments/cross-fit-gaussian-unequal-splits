@@ -1,0 +1,128 @@
+\documentclass[11pt,a4paper]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amssymb}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Unequal splits can shrink cross-fit Gaussian confidence sets}}
+\DeclareMathSizes{8}{8}{8}{8}
+\DeclareMathSizes{9}{9}{8}{8}
+\DeclareMathSizes{10.95}{10.95}{8}{8}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\title[Unequal splits in cross-fit Gaussian inference]{Unequal splits can shrink\\cross-fit Gaussian confidence sets}
+\date{November 27, 2026}
+\begin{document}
+\begin{abstract}
+Dunn, Ramdas, Balakrishnan and Wasserman conjectured that balanced partitions minimize the expected squared diameter of their two-fold Gaussian cross-fit confidence sets. With four observations from a univariate Gaussian of known unit variance and noncoverage level \(e^{-36}\), the expected squared diameter is below \(104\) for a one--three split and at least \(120\) for a two--two split. At any fixed sample size and dimension, the coefficient of \(\log(1/\alpha)\) is \(8/M\), where \(M\) is the larger fold size. For a fixed unequal split we also obtain the constant term with an exponentially small remainder.
+\end{abstract}
+\maketitle
+
+\section{Model and question}
+
+Let \(Y_1,\ldots,Y_n\) be independent \(N_d(\theta_*,I_d)\) observations, with \(\theta_*\in\mathbb R^d\). Use a fixed partition into two nonempty folds of sizes \(a_0,a_1\), with means \(m_0,m_1\). Equivalently the partition can be chosen independently of the data conditional on those sizes. Let \(D=\|m_0-m_1\|\), \(M=\max(a_0,a_1)\), and \(L=\log(1/\alpha)>0\). On fold \(j\), the numerator of the likelihood ratio evaluates the mean of the opposite fold, and the denominator evaluates the parameter \(\theta\). Completing the square in the fold log likelihood gives
+\[
+ T_j(\theta)=\exp\left\{\tfrac{a_j}{2}(\|\theta-m_j\|^2-D^2)\right\}.
+\]
+The cross-fit region \(C\) consists of \(\theta\) with \((T_0(\theta)+T_1(\theta))/2<e^L\). The arithmetic average has equal weights for every split. This is the cross-fit statistic of \cite{wrb} specialized to the arbitrary-split Gaussian region in \cite[\S S4, Eq.~(S28)]{drbwpre}. Section 3.1 of \cite{drbw} and Appendix B.3 of \cite{dunn} ask whether equal folds minimize \(\mathbb E\operatorname{diam}(C)^2\).
+
+\begin{theorem}\label{thm:main}
+For \(n=4\), \(d=1\) and \(\alpha=e^{-36}\),
+\[
+ \mathbb E\operatorname{diam}(C_{1,3})^2<104<120
+ \le\mathbb E\operatorname{diam}(C_{2,2})^2 .
+\]
+For any fixed \(n,d\) and split, \(\mathbb E\operatorname{diam}(C)^2/L\) tends to \(8/M\) as \(L\to\infty\). For \(n\ge4\) the one--\((n-1)\) split and its reflection are the only minimizers among integer splits for all sufficiently large \(L\).
+\end{theorem}
+
+\section{Two bounding balls}
+
+Write \(B(c,r)\) for an open Euclidean ball. If both ratios are below \(e^L\), their average is below \(e^L\). If the average is below \(e^L\), then each ratio is below \(2e^L\). Thus
+\begin{equation}\label{eq:sandwich}
+ \bigcap_{j=0}^1 B\bigl(m_j,\sqrt{D^2+2L/a_j}\bigr)
+ \subseteq C\subseteq
+ \bigcap_{j=0}^1 B\bigl(m_j,\sqrt{D^2+2(L+\log 2)/a_j}\bigr).
+\end{equation}
+Set \(s=\sqrt{2L/M}\) and \(c=(m_0+m_1)/2\). The inner intersection contains the ball centered at \(c\) with radius \(\sqrt{D^2+s^2}-D/2\), by the triangle inequality. The outer intersection is contained in the outer ball for the larger fold. Therefore
+\begin{equation}\label{eq:bounds}
+ 8L/M-4Ds\ \le\ \operatorname{diam}(C)^2\ \le\ 4D^2+8(L+\log 2)/M.
+\end{equation}
+Indeed for \(D<s\) the inner radius is at least \(s-D/2>0\), and \(4(s-D/2)^2\ge4s^2-4Ds\). For \(D\ge s\) the lower bound is nonpositive. Diameters use suprema, so the radius bounds hold with open balls.
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+The two means are independent and their difference has law \(N_d(0,(a_0^{-1}+a_1^{-1})I_d)\). Thus
+\[
+ \mathbb E D^2=d(a_0^{-1}+a_1^{-1}),\qquad
+ \mathbb E D\le\sqrt{\mathbb E D^2}.
+\]
+For the two--two split at \(d=1\) and \(L=36\), these give \(\mathbb E D\le1\) and \(s=6\). Taking expectations in the lower bound of \eqref{eq:bounds} gives \(144-24=120\). For the one--three split, \(\mathbb E D^2=4/3\). The upper bound gives
+\[
+ 96+16/3+(8/3)\log 2<104.
+\]
+This proves the strict comparison. For the limit, divide the bounds in \eqref{eq:bounds} by \(L\) and take expectations. The lower error is of order \(L^{-1/2}\) and the upper error is of order \(L^{-1}\) for each fixed split. The finite list of splits has its smallest limiting coefficient when \(M=n-1\). The two reflected splits have equal expectations by exchange of fold labels. A strictly positive gap between the smallest and all other coefficients then gives the eventual minimizers.
+\end{proof}
+
+\section{Exact balanced diameter}
+
+\begin{proposition}\label{prop:balanced}
+For \(a_0=a_1=h\) and \(d\ge2\), the squared diameter is exactly \(8L/h+3D^2\). Its expectation is \(8L/h+6d/h\).
+\end{proposition}
+
+\begin{proof}
+At midpoint coordinates \(z=\theta-c\), let \(w=m_1-m_0\). The averaged likelihood ratio factors as
+\[
+ \exp\{\tfrac h2(\|z\|^2-3D^2/4)\}\cosh(hz\cdot w/2).
+\]
+Since \(\cosh\ge1\), the norm of \(z\) in the region is less than \(\sqrt{2L/h+3D^2/4}\). In dimension at least two a unit vector perpendicular to \(w\) exists. If \(w=0\), choose any unit vector. Along that line the \(\cosh\) factor is one, so pairs of opposite points approach the diameter of the enclosing ball. Squaring gives the identity. The expectation follows from \(\mathbb E D^2=2d/h\).
+\end{proof}
+
+Theorem 4 of \cite{drbw} already gives a balanced outer ball about the midpoint with squared radius \(2L/h+D^2\). The exact diameter uses the smaller radius above and the perpendicular direction. For example, at \(n=4,d=2,L=36\) the balanced expectation is \(150\) and the unequal upper bound in \eqref{eq:bounds} is strictly below \(328/3\).
+
+\section{An exponentially accurate unequal-split expansion}
+
+\begin{proposition}\label{prop:expansion}
+Fix \(d\) and unequal sizes \(M>m\ge1\). There is a constant \(\gamma>0\), depending on those fixed parameters, such that as \(L\to\infty\),
+\[
+ \mathbb E\operatorname{diam}(C)^2
+ =\frac{8(L+\log 2)}{M}+4d\left(\frac1M+\frac1m\right)+O(e^{-\gamma L}).
+\]
+The expectation is bounded above by the sum of the two displayed terms.
+\end{proposition}
+
+\begin{proof}
+Let \(u,v\) be the means of the larger and smaller folds. By \eqref{eq:sandwich}, \(C\subseteq B(u,R)\) for \(R^2=D^2+2(L+\log 2)/M\). Choose \(\eta>0\) so that
+\[
+ \tfrac m2\left(\sqrt{\eta^2+2/M}+\eta\right)^2<1,
+\]
+which is possible since the value at zero is \(m/M\). Fix \(\rho<1\) strictly above the left side. On \(E_L=\{D\le\eta\sqrt L\}\), the smaller-fold term over \(B(u,R)\) is at most \(\exp\{m(R+D)^2/2\}\). For all sufficiently large \(L\) this is bounded by \(e^{\rho L}\) uniformly on \(E_L\). In fact \((R+D)/\sqrt L\) is at most \(\sqrt{\eta^2+2(1+\log(2)/L)/M}+\eta\).
+
+Set \(b_L=-\log(1-\tfrac12e^{-(1-\rho)L})\). For all sufficiently large \(L\) the ball about \(u\) of squared radius \(R^2-2b_L/M\) is contained in \(C\) on \(E_L\). Its larger-fold ratio is strictly below \(2e^L-e^{\rho L}\). Accordingly the difference between \(4R^2\) and the squared diameter is nonnegative and is bounded by \(8b_L/M\) there. On \(E_L^c\) the same difference is at most \(4R^2\).
+
+\begin{samepage}
+Now \(D^2\) has law \((M^{-1}+m^{-1})\chi_d^2\). Choose \(t>0\) within its moment generating function's interval of convergence. On \(E_L^c\), use \(1\le e^{t(D^2-\eta^2L)}\) to bound
+\[
+ \mathbb E[(1+L+D^2)\mathbf 1_{E_L^c}]
+ \le e^{-t\eta^2 L}\,\mathbb E[(1+L+D^2)e^{tD^2}].
+\]
+This is exponentially small, since the last expectation is finite and grows at most linearly in \(L\). Also \(b_L=O(e^{-(1-\rho)L})\). Taking expectations of the diameter bounds gives the stated expansion and its upper sign.
+\end{samepage}
+\end{proof}
+
+The comparison and expansion keep the sample size and dimension fixed. They leave the optimizing split at ordinary significance levels open and concern squared diameter, rather than volume or testing power.
+
+\section*{Research disclosure}
+
+\begingroup\raggedright
+Under human direction, ChatGPT Astra 6.2 (OpenAI) generated the discovery proof, unequal-split supplement and original replay packet. OpenAI Codex reviewed the mathematics and revised the manuscript. GPT-6.2 Sol checked the original conjecture and related results, prepared the exact finite replay and worked visual, and assembled the release. DannyExperiments maintains the repository and is the preferred citation identity. No AI system is proposed as an author.
+\par\endgroup
+
+\begin{thebibliography}{9}
+\bibitem{dunn}
+R. Dunn, \emph{Advances in nonasymptotic and nonparametric inference}, Ph.D. dissertation, Carnegie Mellon University, 2021, \href{https://robinmdunn.github.io/files/RobinDunn-dissertation.pdf\#page=145}{Appendix B.3}.
+\bibitem{drbw}
+R. Dunn, A. Ramdas, S. Balakrishnan, and L. Wasserman, \emph{Gaussian universal likelihood ratio testing}, Biometrika \textbf{110} (2023), 319--337. \href{https://doi.org/10.1093/biomet/asac064}{doi:10.1093/biomet/asac064}.
+\bibitem{drbwpre}
+R. Dunn, A. Ramdas, S. Balakrishnan, and L. Wasserman, \emph{Gaussian universal likelihood ratio testing}, author manuscript and supplement, \href{https://arxiv.org/html/2104.14676v3}{arXiv:2104.14676v3}, 2022.
+\bibitem{wrb}
+L. Wasserman, A. Ramdas, and S. Balakrishnan, \emph{Universal inference}, Proc. Natl. Acad. Sci. U.S.A. \textbf{117} (2020), 16880--16890. \href{https://doi.org/10.1073/pnas.1922664117}{doi:10.1073/pnas.1922664117}.
+\end{thebibliography}
+\end{document}

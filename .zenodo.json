@@ -1,0 +1,30 @@
+{
+  "title": "Unequal splits can shrink cross-fit Gaussian confidence sets",
+  "upload_type": "software",
+  "version": "1.0.0",
+  "publication_date": "2026-11-27",
+  "creators": [
+    {
+      "name": "DannyExperiments"
+    }
+  ],
+  "description": "For four observations from a univariate Gaussian with known unit variance and noncoverage level exp(−36), the expected squared diameter of a two-fold cross-fit confidence set is below 104 for a 1–3 split and at least 120 for a 2–2 split. This disproves the conjecture in Dunn, Ramdas, Balakrishnan and Wasserman, Biometrika 110 (2023), §3.1, doi:10.1093/biomet/asac064.\n\nThe two directional likelihood ratios give an inner ball at the midpoint and an outer ball at the larger fold mean. Taking expectations of their diameter bounds gives the strict comparison. The original paper provides the cross-fit statistic and a balanced enclosing ball. The split counterexample, exact balanced diameter in dimensions at least two, and unequal high-confidence expansion are the contributions here.\n\nFor fixed sample size and dimension, the limiting coefficient of log(1/α) is eight divided by the larger fold size. A Gaussian tail bound yields an exponentially small remainder beyond two terms for each fixed unequal split. The replay checks exact likelihood identities, squared-diameter bounds and slope comparisons. The offline explorer distinguishes fixed-sample geometry from sampling expectations. The result leaves ordinary significance levels, volume optimization and other cross-fit constructions open. External peer review and formal verification are pending.\n\nUnder human direction, ChatGPT Astra 6.2 (OpenAI) generated the discovery proof, unequal-split supplement and original replay packet. OpenAI Codex reviewed the mathematics and revised the manuscript. GPT-6.2 Sol checked the original conjecture and related results, prepared the exact finite replay and worked visual, and assembled the release. DannyExperiments maintains the repository and is the preferred citation identity. No AI system is proposed as an author.",
+  "keywords": [
+    "universal inference",
+    "cross-fit likelihood ratio",
+    "Gaussian confidence sets",
+    "sample splitting",
+    "expected squared diameter",
+    "high-confidence asymptotics"
+  ],
+  "access_right": "open",
+  "license": "other-closed",
+  "notes": "All rights reserved. Publicly downloadable files are supplied without a repository-wide reuse license.",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/DannyExperiments/cross-fit-gaussian-unequal-splits/releases/tag/v1.0.0",
+      "relation": "isSupplementTo",
+      "resource_type": "software"
+    }
+  ]
+}
