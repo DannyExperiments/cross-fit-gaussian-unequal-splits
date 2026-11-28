@@ -1,6 +1,6 @@
 # Unequal splits can shrink cross-fit Gaussian confidence sets
 
-[![Repository verification](https://github.com/DannyExperiments/cross-fit-gaussian-unequal-splits/actions/workflows/verify.yml/badge.svg?branch=main)](https://github.com/DannyExperiments/cross-fit-gaussian-unequal-splits/actions/workflows/verify.yml) [![Replay verification](https://github.com/DannyExperiments/cross-fit-gaussian-unequal-splits/actions/workflows/replay.yml/badge.svg?branch=main)](https://github.com/DannyExperiments/cross-fit-gaussian-unequal-splits/actions/workflows/replay.yml) [![PDF build](https://github.com/DannyExperiments/cross-fit-gaussian-unequal-splits/actions/workflows/pdf.yml/badge.svg?branch=main)](https://github.com/DannyExperiments/cross-fit-gaussian-unequal-splits/actions/workflows/pdf.yml) [![Version DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24571972.svg)](https://doi.org/10.5281/zenodo.24571972)
+[![Repository verification](https://github.com/DannyExperiments/cross-fit-gaussian-unequal-splits/actions/workflows/verify.yml/badge.svg?branch=main)](https://github.com/DannyExperiments/cross-fit-gaussian-unequal-splits/actions/workflows/verify.yml) [![Replay verification](https://github.com/DannyExperiments/cross-fit-gaussian-unequal-splits/actions/workflows/replay.yml/badge.svg?branch=main)](https://github.com/DannyExperiments/cross-fit-gaussian-unequal-splits/actions/workflows/replay.yml) [![PDF build](https://github.com/DannyExperiments/cross-fit-gaussian-unequal-splits/actions/workflows/pdf.yml/badge.svg?branch=main)](https://github.com/DannyExperiments/cross-fit-gaussian-unequal-splits/actions/workflows/pdf.yml) [![Version DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24571972.svg)](https://doi.org/10.5281/zenodo.24571972) [![Partial Lean verification](https://github.com/DannyExperiments/cross-fit-gaussian-unequal-splits/actions/workflows/lean.yml/badge.svg?branch=main)](https://github.com/DannyExperiments/cross-fit-gaussian-unequal-splits/actions/workflows/lean.yml)
 
 For four observations from a univariate Gaussian with known unit variance and noncoverage level exp(−36), the expected squared diameter of a two-fold cross-fit confidence set is below 104 for a 1–3 split and at least 120 for a 2–2 split. This refutes the balanced-split conjecture of Dunn, Ramdas, Balakrishnan and Wasserman.
 
@@ -28,3 +28,7 @@ The [recorded replay](verification/results/replay.txt) checks the likelihood ide
 ## Cite
 
 DannyExperiments. *Unequal splits can shrink cross-fit Gaussian confidence sets*. Version 1.0.0, 27 November 2026. [Version DOI](https://doi.org/10.5281/zenodo.24571972).
+
+## Partial Lean verification
+
+For rational midpoint coordinates and nonnegative fold separation D, every point strictly between −(s−D/2) and s−D/2 belongs to both inner balls of squared radius D²+s². Every smaller nonnegative radius provides two antipodal witnesses. [Scope, source and replay](formalization/README.md)

@@ -1,0 +1,2 @@
+'CrossFit.interior' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CrossFit.antipodes' depends on axioms: [propext, Classical.choice, Quot.sound]
